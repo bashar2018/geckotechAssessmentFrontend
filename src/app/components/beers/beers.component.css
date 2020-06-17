@@ -1,0 +1,13 @@
+img {
+  width: 100%;
+}
+.beers input{
+  width: 50%;
+}
+.beers-card {
+  width: 400px;
+}
+.mat-card-header .mat-card-title{
+  padding: 0.4rem 0.3rem;
+}
+

@@ -1,0 +1,51 @@
+<h1>
+  Here you wil find all information about the {{currentBeer.name}}
+</h1>
+<mat-card class="cards">
+  <mat-card-header>
+    <mat-card-title>{{currentBeer.name}}</mat-card-title>
+  </mat-card-header>
+  <img height="200px" src={{currentBeer.image_url}} alt={{currentBeer.image_url}}>
+
+  <mat-card-content>
+    <div class="column">
+      <mat-label>
+        Over {{currentBeer.name}}
+      </mat-label>
+      <textarea style="height: 5em; width: 100%" readonly>
+            {{currentBeer.description}}
+          </textarea>
+    </div>
+    <mat-card-actions>
+      <mat-label>
+        Contributed by:
+      </mat-label>
+        {{currentBeer.contributed_by}}
+    </mat-card-actions>
+    <mat-card-actions>
+    <mat-label>
+      Volume:
+    </mat-label>
+    {{currentBeer.volume.value}} {{currentBeer.volume.unit}}
+    </mat-card-actions>
+    <mat-card-title>
+      Ingredients
+    </mat-card-title>
+    <p>
+      Name: {{currentBeer.ingredients.hops[0].name}},
+      Amount: {{currentBeer.ingredients.hops[0].amount.value}} {{currentBeer.ingredients.hops[0].amount.unit}},
+      Attribute: {{currentBeer.ingredients.hops[0].attribute}}
+    </p>
+    <p>
+      Name: {{currentBeer.ingredients.hops[1].name}},
+      Amount: {{currentBeer.ingredients.hops[1].amount.value}} {{currentBeer.ingredients.hops[1].amount.unit}},
+      Attribute: {{currentBeer.ingredients.hops[1].attribute}}
+    </p>
+    <mat-card-title>
+      Food Pairing:
+    </mat-card-title>
+    <div *ngFor="let pairingIem of currentBeer.food_pairing">
+      <p>{{pairingIem}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
